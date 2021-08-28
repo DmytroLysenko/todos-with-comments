@@ -1,0 +1,10 @@
+.container {
+  padding: 30px 20px;
+  box-shadow: 1px -1px 5px 0px #000000a3;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: lighter;
+  margin-bottom: 25px;
+}

@@ -1,0 +1,25 @@
+.form {
+  position: relative;
+  padding-left: 70px;
+}
+
+.textarea {
+  display: block;
+  height: 70px;
+  width: 100%;
+  resize: none;
+  padding: 5px;
+  color: var(--textColorGray);
+  border-color: var(--borderColor);
+}
+
+.form::before {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--colorGray);
+}

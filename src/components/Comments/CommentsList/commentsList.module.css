@@ -1,0 +1,45 @@
+.list {
+  margin-bottom: 25px;
+}
+
+.item {
+  padding-left: 70px;
+  color: var(--textColorGray);
+  margin-bottom: 15px;
+  position: relative;
+  min-height: 70px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.item:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.item::before {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.item_Orange {
+  composes: item;
+}
+
+.item_Orange::before {
+  background-color: var(--orangeColor);
+}
+
+.item_Blue {
+  composes: item;
+}
+
+.item_Blue::before {
+  background-color: var(--blueColor);
+}

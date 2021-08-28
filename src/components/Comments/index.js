@@ -5,12 +5,12 @@ import CommentsList from "./CommentsList";
 
 import styles from "./comments.module.css";
 
-export default function Comments() {
+export default function Comments({ commentsList, onAddComment }) {
   return (
-    <div>
-      <h2>Comments</h2>
-      <CommentsAddForm />
-      <CommentsList />
+    <div className={styles.container}>
+      <h2 className={styles.title}>Comments</h2>
+      <CommentsList commentsList={commentsList} />
+      <CommentsAddForm onAddComment={onAddComment} />
     </div>
   );
 }
