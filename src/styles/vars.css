@@ -1,0 +1,17 @@
+:root {
+  --mainColorDark: #2b2f3e;
+  --mainColorLight: #f9f9f9;
+  --colorGray: #e6e6e6;
+  --borderColor: #cccccc;
+  --aquaColor: #27ccc0;
+  --redColor: #ff305a;
+  --orangeColor: #ff8a00;
+  --blueColor: #47568c;
+
+  --textColorWhite: #ffffff;
+  --textColorDark: #2b2f3e;
+  --textColorGray: #666666;
+  --textColorLight: #b3b3b3;
+
+  --primeFont: "Open Sans", sans-serif, serif;
+}

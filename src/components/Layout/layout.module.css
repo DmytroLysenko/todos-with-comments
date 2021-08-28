@@ -1,0 +1,12 @@
+.container {
+  height: 100vh;
+  display: flex;
+}
+
+.header {
+  width: 21%;
+}
+
+.mainSection {
+  width: 79%;
+}
