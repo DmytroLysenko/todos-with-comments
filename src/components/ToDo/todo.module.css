@@ -1,0 +1,10 @@
+.container {
+  padding: 30px 20px;
+  box-shadow: 0px 0px 5px 0px var(--mainColorDarkBlur);
+}
+
+.title {
+  font-size: 2em;
+  font-weight: lighter;
+  margin-bottom: 25px;
+}
