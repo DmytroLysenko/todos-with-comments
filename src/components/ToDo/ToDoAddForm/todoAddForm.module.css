@@ -23,4 +23,5 @@
   background-color: var(--aquaColor);
   color: var(--textColorWhite);
   font-size: 1em;
+  cursor: pointer;
 }

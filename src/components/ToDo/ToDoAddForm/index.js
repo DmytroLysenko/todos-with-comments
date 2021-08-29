@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import styles from "./todoAddForm.module.css";
 
-export default function ToDoAddForm({ onAddToDo }) {
+import { MyContext } from "../../../Views/ToDoPage";
+
+export default function ToDoAddForm() {
   const [text, setText] = useState("");
+  const { handleAddTodo } = useContext(MyContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!text) return;
-    onAddToDo(text);
+    handleAddTodo(text);
     setText("");
   };
 

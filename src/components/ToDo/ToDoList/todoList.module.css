@@ -1,11 +1,7 @@
-.list {
-}
-
 .item {
   color: var(--textColorDark);
   font-weight: bold;
-  margin-bottom: 15px;
-  padding-bottom: 5px;
+  padding: 10px 0;
   border-bottom: 1px solid var(--borderColor);
 
   display: flex;
@@ -15,6 +11,23 @@
 
 .item:last-of-type {
   margin-bottom: 0;
+}
+
+.item_Active {
+  composes: item;
+  position: relative;
+}
+
+.item_Active::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 100%;
+  background-color: var(--redColor);
+
+  position: absolute;
+  top: 0;
+  left: -25px;
 }
 
 .commentsCount {
@@ -32,4 +45,6 @@
   border: 1px solid var(--redColor);
   color: var(--redColor);
   font-size: 1em;
+  background-color: inherit;
+  cursor: pointer;
 }

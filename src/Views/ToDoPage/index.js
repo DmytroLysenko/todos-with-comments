@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import Layout from "../../components/Layout";
 import ToDo from "../../components/ToDo";
@@ -19,11 +20,53 @@ const commentsList = [
   },
 ];
 
-export default function Main() {
+const todoList = [
+  {
+    id: 1,
+    text: "First item with custom name",
+  },
+  {
+    id: 2,
+    text: "Second  item is active",
+  },
+  {
+    id: 3,
+    text: "Third  item is not active",
+  },
+];
+
+export const MyContext = React.createContext("test");
+
+export default function ToDoPage() {
+  const [todos, setTodos] = useState(todoList);
+  const [comments, setComments] = useState(commentsList);
+
+  const handleDeleteTodo = (id) => {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+  };
+
+  const handleAddTodo = (todoText) => {
+    setTodos((prev) => [...prev, { id: uuidv4(), text: todoText }]);
+  };
+
+  const handleAddComment = (commentText) => {
+    setComments((prev) => [...prev, { id: uuidv4(), text: commentText }]);
+  };
+
   return (
-    <Layout>
-      <ToDo />
-      <Comments commentsList={commentsList} />
-    </Layout>
+    <MyContext.Provider
+      value={{
+        todos,
+        comments,
+        handleAddTodo,
+        handleDeleteTodo,
+        handleAddComment,
+      }}
+    >
+      <Layout>
+        <ToDo />
+        <Comments />
+      </Layout>
+    </MyContext.Provider>
   );
 }

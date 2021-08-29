@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import styles from "./commentAddForm.module.css";
 
-export default function CommentsAddForm({ onAddComment }) {
+import { MyContext } from "../../../Views/ToDoPage";
+
+export default function CommentsAddForm() {
   const [text, setText] = useState("");
+  const { handleAddComment } = useContext(MyContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!text) return;
-    onAddComment(text);
+    handleAddComment(text);
     setText("");
   };
 

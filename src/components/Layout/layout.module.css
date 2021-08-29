@@ -1,6 +1,8 @@
 .container {
   height: 100vh;
+  min-width: 1280px;
   display: flex;
+  background-color: var(--mainColorLight);
 }
 
 .header {
@@ -9,4 +11,8 @@
 
 .mainSection {
   width: 79%;
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
 }

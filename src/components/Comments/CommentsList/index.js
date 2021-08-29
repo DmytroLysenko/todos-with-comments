@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import styles from "./commentsList.module.css";
 
-function CommentsList({ commentsList }) {
-  return commentsList.length ? (
+import { MyContext } from "../../../Views/ToDoPage";
+
+export default function CommentsList() {
+  const { comments } = useContext(MyContext);
+
+  return comments.length ? (
     <ul className={styles.list}>
-      {commentsList.map((comment) => (
+      {comments.map((comment) => (
         <li key={comment.id} className={getStyle()}>
           {comment.text}
         </li>
@@ -15,12 +19,6 @@ function CommentsList({ commentsList }) {
     <p>There are no comments yet...</p>
   );
 }
-
-CommentsList.defaultProps = {
-  commentsList: [],
-};
-
-export default CommentsList;
 
 function* styleGenarator() {
   yield styles.item_Orange;
