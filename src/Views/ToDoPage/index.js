@@ -12,9 +12,7 @@ export const MyContext = React.createContext("test");
 export default function ToDoPage() {
   const [todos, setTodos] = useState([]);
   const [comments, setComments] = useState([]);
-  const [activeTodoId, setActiveTodoId] = useState(
-    todos.length ? todos[0].id : null
-  );
+  const [activeTodoId, setActiveTodoId] = useState(null);
 
   useEffect(() => {
     const data = LS.getData();

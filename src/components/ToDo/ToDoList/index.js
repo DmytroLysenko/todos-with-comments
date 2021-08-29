@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import styles from "./todoList.module.css";
 
@@ -12,6 +12,14 @@ export default function ToDoList() {
     handleDeleteTodo,
     handleSetActiveTodo,
   } = useContext(MyContext);
+
+  useEffect(() => {
+    if (!activeTodoId) {
+      if (todos && todos[0] && todos[0].id) {
+        handleSetActiveTodo(todos[0].id);
+      }
+    }
+  }, [activeTodoId, todos, handleSetActiveTodo]);
 
   const getCommentsCount = (todoId) => {
     return comments.filter((comment) => comment.todoId === todoId).length;
