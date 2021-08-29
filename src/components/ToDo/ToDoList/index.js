@@ -5,14 +5,33 @@ import styles from "./todoList.module.css";
 import { MyContext } from "../../../Views/ToDoPage";
 
 export default function ToDoList() {
-  const { todos, handleDeleteTodo } = useContext(MyContext);
+  const {
+    todos,
+    comments,
+    activeTodoId,
+    handleDeleteTodo,
+    handleSetActiveTodo,
+  } = useContext(MyContext);
+
+  const getCommentsCount = (todoId) => {
+    return comments.filter((comment) => comment.todoId === todoId).length;
+  };
 
   return todos.length ? (
     <ul className={styles.list}>
       {todos.map((todo) => (
-        <li key={todo.id} className={styles.item_Active}>
+        <li
+          key={todo.id}
+          onClick={() => handleSetActiveTodo(todo.id)}
+          className={
+            todo.id === activeTodoId ? styles.item_Active : styles.item
+          }
+        >
           <p>
-            {todo.text} <span className={styles.commentsCount}>132</span>
+            {todo.text}{" "}
+            <span className={styles.commentsCount}>
+              {getCommentsCount(todo.id)}
+            </span>
           </p>
 
           <button
@@ -29,4 +48,3 @@ export default function ToDoList() {
     <p>There are no todos yet...</p>
   );
 }
-

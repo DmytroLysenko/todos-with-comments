@@ -43,3 +43,8 @@
 .item_Blue::before {
   background-color: var(--blueColor);
 }
+
+.noCommentsMessage {
+  margin-bottom: 25px;
+}
+  
