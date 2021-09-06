@@ -28,6 +28,7 @@ export default function ToDoPage() {
 
   const handleDeleteTodo = (todoId) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== todoId));
+    setComments((prev) => prev.filter((comment) => comment.todoId !== todoId));
   };
 
   const handleAddTodo = (todoText) => {
